@@ -6,7 +6,7 @@ import java.io.*;
  * Very generic static helper functions for many different use cases (File operations).
  * This class is not meant to be constructed.
  *
- * @version 18.6.2024
+ * @version 21.6.2024
  */
 public final class FileUtil {
 
@@ -113,5 +113,33 @@ public final class FileUtil {
     public static String getExtension(String fileName) {
         int dotIndex = fileName.lastIndexOf('.');
         return (dotIndex == -1) ? null : fileName.substring(dotIndex + 1);
+    }
+	
+	
+	/**
+	* Get the size of a file in bytes
+     * @param file File to get the size of
+     * @return Size of the file in bytes
+     */
+    public static long getFileSizeInBytes(File file) {
+        try {
+            return Files.size(file.toPath());
+        } catch (IOException ioException) {
+            throw new RuntimeException(ioException);
+        }
+    }
+
+    /**
+	* Get the last modified time of a file
+     * @param file File to get the last modified time of
+     * @return Last modify date-time
+     */
+    public static LocalDateTime getFileLastModifyTime(File file) {
+        try {
+            FileTime fileTime = Files.getLastModifiedTime(file.toPath());
+            return LocalDateTime.ofInstant(fileTime.toInstant(), ZoneId.systemDefault());
+        } catch (IOException ioException) {
+            throw new RuntimeException(ioException);
+        }
     }
 }
