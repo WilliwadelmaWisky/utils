@@ -8,6 +8,8 @@ import util.MathUtil;
 
 /**
  * A text field for decimal numbers
+ *
+ * @version 21.6.2024
  */
 public class DecimalField extends TextField {
 
@@ -68,7 +70,7 @@ public class DecimalField extends TextField {
     public DoubleProperty valueProperty() { return _valueProperty; }
 
 
-    public void setValue(double value) { _valueProperty.setValue(Math.clamp(value, _minValue, _maxValue)); }
+    public void setValue(double value) { _valueProperty.setValue(MathUtil.clamp(value, _minValue, _maxValue)); }
     public void setMinValue(double minValue) { _minValue = minValue; }
     public void setMaxValue(double maxValue) { _maxValue = maxValue; }
 }

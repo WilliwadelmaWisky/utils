@@ -4,9 +4,32 @@ package util;
  * Very generic static helper functions for many different use cases (Math).
  * This class is not meant to be constructed.
  *
- * @version 19.6.2024
+ * @version 21.6.2024
  */
 public final class MathUtil {
+
+	/**
+     * Keeps a value in bounds of defined minimum and maximum values
+     * @param v Value to test
+     * @param min Minimum allowed value
+     * @param max Maximum allowed value
+     * @return Value in bounds
+     */
+    public static double clamp(double v, double min, double max) {
+        return Math.max(Math.min(v, max), min);
+    }
+
+    /**
+     * Keeps a value in bounds of defined minimum and maximum values
+     * @param v Value to test
+     * @param min Minimum allowed value
+     * @param max Maximum allowed value
+     * @return Value in bounds
+     */
+    public static int clamp(int v, int min, int max) {
+        return Math.max(Math.min(v, max), min);
+    }
+	
 
     /**
      * Check if a value is close to a target value by some precision

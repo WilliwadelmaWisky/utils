@@ -8,7 +8,7 @@ import javafx.scene.input.KeyEvent;
 /**
  * A text field for whole numbers
  *
- * @version 19.6.2024
+ * @version 21.6.2024
  */
 public class IntegerField extends TextField {
 
@@ -66,7 +66,7 @@ public class IntegerField extends TextField {
     public IntegerProperty valueProperty() { return _valueProperty; }
 
 
-    public void setValue(int newValue) { _valueProperty.setValue(newValue); }
+    public void setValue(int value) { _valueProperty.setValue(MathUtil.clamp(value, _minValue, _maxValue)); }
     public void setMinValue(int minValue) { _minValue = minValue; }
     public void setMaxValue(int maxValue) { _maxValue = maxValue; }
 }
