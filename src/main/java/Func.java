@@ -1,4 +1,4 @@
-package util.event;
+package com.github.williwadelmawisky.utils;
 
 /**
  * A simple function class with no input values and a single output value

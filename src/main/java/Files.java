@@ -1,4 +1,4 @@
-package util.io;
+package com.github.williwadelmawisky.utils;
 
 import java.io.*;
 
@@ -6,9 +6,9 @@ import java.io.*;
  * Very generic static helper functions for many different use cases (File operations).
  * This class is not meant to be constructed.
  *
- * @version 21.6.2024
+ * @version 17.2.2025
  */
-public final class FileUtil {
+public abstract class Files {
 
     /**
      * Read all contents of the file

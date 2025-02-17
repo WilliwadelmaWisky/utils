@@ -1,12 +1,12 @@
-package util;
+package com.github.williwadelmawisky.utils;
 
 /**
  * Very generic static helper functions for many different use cases (Math).
  * This class is not meant to be constructed.
  *
- * @version 21.6.2024
+ * @version 17.2.2025
  */
-public final class MathUtil {
+public abstract class Math {
 
 	/**
      * Keeps a value in bounds of defined minimum and maximum values

@@ -1,17 +1,11 @@
-package util;
-
-import util.event.FuncI;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.github.williwadelmawisky.utils;
 
 /**
- * Very generic static helper functions for many different use cases.
- * This class is not meant to be constructed.
+ * Helper functions for strings
  *
- * @version 18.6.2024
+ * @version 17.2.2025
  */
-public final class Util {
+public abstract class Strings {
 
     /**
      * Add specified extra characters to the start of the string until a certain length is achieved.
@@ -49,23 +43,5 @@ public final class Util {
         }
 
         return stringBuilder.toString();
-    }
-
-
-    /**
-     * Convert an array of some type to some other type
-     * @param array Array to modify
-     * @param selector Modifier function
-     * @param <TIn> Input type
-     * @param <TOut> Output type
-     * @return A list of modified array elements
-     */
-    public static <TIn, TOut> List<TOut> select(TIn[] array, FuncI<TIn, TOut> selector) {
-        List<TOut> selectedList = new ArrayList<>();
-        for (TIn value : array) {
-            selectedList.add(selector.invoke(value));
-        }
-
-        return selectedList;
     }
 }

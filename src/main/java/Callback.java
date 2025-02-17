@@ -1,4 +1,4 @@
-package util.event;
+package com.github.williwadelmawisky.utils;
 
 /**
  * A simple function class with a single input value and a single output value
@@ -8,7 +8,7 @@ package util.event;
  * @version 18.6.2024
  */
 @FunctionalInterface
-public interface FuncI<TIn, TOut> {
+public interface Callback<TIn, TOut> {
 
     /**
      * Calls the function
